@@ -34,8 +34,6 @@ sudo systemctl status node_exporter
 curl http://localhost:9100/metrics
 
 
-
-
 #Custom Metrics
 
 mkdir /var/lib/node_exporter
@@ -47,7 +45,6 @@ systemctl restart node_exporter
 journalctl -eu node_exporter
 
 # Any custom metric has to be written to the files in /var/lib/node_exporter/<metric_name>.prom
-
 
 # Example - Consider metrics.py 
 # Store metrics.py in a safe (non editable) location
