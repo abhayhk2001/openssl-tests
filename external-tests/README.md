@@ -1,3 +1,10 @@
+# Running tests from client.
+
+Prerequisites:
+1. Install QAT engine using either [setup-rhel8.sh](setup-rhel8.sh) or [setup-ubuntu.sh](setup-ubuntu.sh).
+2. Use openssl speed to test if optimization works.
+
+To run the run-tests.py install the following packages.
 ```bash
 sudo apt install gcc wget libssl-dev -y
 sudo apt install python python3-pip python-is-python3 -y && pip install pandas
@@ -9,9 +16,10 @@ sudo dnf update -y
 sudo dnf install wget  openssl-devel -y && sudo yum install python3 python3-pip -y && sudo pip3 install pandas && sudo dnf group install "Development Tools" -y
 ```
 
+
+
 ```bash
 mkdir tests && cd tests && rm ./*
-wget https://raw.githubusercontent.com/abhayhk2001/open-ssl-tests/main/external-tests/EncryptDecryptPerfTest.c https://raw.githubusercontent.com/abhayhk2001/open-ssl-tests/main/external-tests/run-tests.py https://raw.githubusercontent.com/abhayhk2001/open-ssl-tests/main/external-tests/tests.csv
 
 cc -g -O3 -o EncryptDecryptPerfTest EncryptDecryptPerfTest.c -lssl -lcrypto
 
